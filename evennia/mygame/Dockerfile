@@ -1,6 +1,0 @@
-FROM evennia/evennia:latest
-
-#ENTRYPOINT evennia start -l
-
-RUN apk update && apk add postgresql-dev gcc python2-dev musl-dev
-RUN pip install psycopg2
