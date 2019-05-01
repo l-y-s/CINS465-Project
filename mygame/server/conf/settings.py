@@ -34,7 +34,6 @@ from evennia.settings_default import *
 # This is the name of your game. Make it catchy!
 SERVERNAME = "mygame"
 
-
 ######################################################################
 # Settings given in secret_settings.py override those in this file.
 ######################################################################
@@ -42,3 +41,13 @@ try:
     from server.conf.secret_settings import *
 except ImportError:
     print("secret_settings.py file not found or failed to import.")
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'evennia',
+        'USER': 'evennia',
+        'PASSWORD': 'ToesButtsObvi',
+        'HOST': 'evennia.c4smtyfk8xvf.us-east-1.rds.amazonaws.com',
+        'PORT': '5432'
+}}
