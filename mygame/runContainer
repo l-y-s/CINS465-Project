@@ -1,0 +1,1 @@
+docker run -it --rm -p 4000:4000 -p 4001:4001 -p 4005:4005 -v $PWD:/usr/src/game test/mygame
