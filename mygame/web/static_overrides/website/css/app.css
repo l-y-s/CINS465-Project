@@ -34,7 +34,7 @@ a:visited {
   height: auto;
   min-height: 35rem;
   padding: 15rem 0;
-  background-image: url("../images/blinkcurs.gif");
+  background-image: url(" https://s3-us-west-1.amazonaws.com/cins465-evennia-project/blinkcurs.gif");
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: scroll;
@@ -88,6 +88,6 @@ a:visited {
   background-color: #3c475d !important;
 }
 
-.StatsLists {
-  background-color: #92a1b9
+.list-group-item {
+  background-color:  #d0d7e1
 }
