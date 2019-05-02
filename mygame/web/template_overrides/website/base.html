@@ -3,20 +3,16 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <meta name="author" content="Evennia Contributors" />
     <meta name="generator" content="Evennia" />
-
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="icon" type="image/x-icon" href="/static/website/images/evennia_logo.png" />
 
+    <!--CSS is all hosted on our S3 bucket-->
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
-    <!-- Base CSS-->
+    <link rel="stylesheet" href="https://s3-us-west-1.amazonaws.com/cins465-evennia-project/bootstrap.css">
+    <!-- App Specific CSS-->
     <link rel="stylesheet" href="https://s3-us-west-1.amazonaws.com/cins465-evennia-project/app.css">
-  <!--  <link href="{% static 'website/css/mygame.css' %}" rel="stylesheet">
--->
   </head>
-  <body>
 
     <body>
       <!-- Navigation -->
@@ -32,7 +28,7 @@
                 <a class="nav-link js-scroll-trigger" href="#about">About</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link js-scroll-trigger" href="./play.html">Play</a>
+                <a class="nav-link js-scroll-trigger" href="./webclient">Play</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link js-scroll-trigger" href="#how2play">How to Play</a>
@@ -55,7 +51,6 @@
       <header class="mainhead" id="page-top">
         <div class="container text-center">
           <h1>Welcome to the MUD that will more than likely never be titled.</h1>
-          <p class="lead">Ipsum ispum ipsum Ipsum ispum ipsum Ipsum ispum ipsum Ipsum ispum ipsum Ipsum ispum ipsum Ipsum ispum ipsum</p>
         </div>
       </header>
 
@@ -71,7 +66,7 @@
               <ul>
                 <li>Powered by <a href="http://www.evennia.com/">Evennia</a></li>
                 <li>Hosted 100% on AWS</li>
-                <li><strike>Utilizes AWS to scale with demand</strike> We still have 3 weeks ¯\_(ツ)_/¯</li>
+                <li><strike>Utilizes AWS to scale with demand</strike> We still have 2 weeks ¯\_(ツ)_/¯</li>
               </ul>
             </div>
           </div>
@@ -95,10 +90,22 @@
            <div class="col-lg-8 mx-auto">
              <h2>Stats</h2>
              <p class="lead">Here are some stats about our game:</p>
-             <ul>
-               <li>We have none yet</li>
-               <li>But maybe some day</li>
-               <li>Like I said we still have like 3 weeks</li>
+             <ol>
+               <li>Database Stats
+                 <ul>
+                   <li class="list-group-item">{{num_accounts_registered}} account{{num_accounts_registered|pluralize}} (+ {{num_characters}} character{{num_characters|pluralize}})</li>
+                   <li class="list-group-item">{{num_rooms}} room{{num_rooms|pluralize}} (+ {{num_exits}} exits)</li>
+                   <li class="list-group-item">{{num_others}} other objects</li>
+                 </ul>
+               </li>
+               <li>User Stats
+                 <ul>
+                   {% for account in accounts_connected_recent %}
+                   <li class="list-group-item">{{account.username}}&mdash;<em>{{account.last_login|timesince}} ago</em></li>
+                   {% endfor %}
+                 </ul>
+               </li>
+             </ol>
            </div>
          </div>
        </div>
