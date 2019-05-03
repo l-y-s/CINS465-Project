@@ -7,15 +7,13 @@ Login
 {% block content %}
 
 {% load addclass %}
-
-<div class="row">
-  <div class="col">
-    <div class="card">
-      <div class="card-body">
+    <section class="login">
+      <div class="container">
         <h1 class="card-title">Login</h1>
         <hr />
         {% if user.is_authenticated %}
         <p>You are already logged in!</p>
+        <h3><a href="{% url 'logout' %}">Logout?</a></h3>
         {% else %}
         {% if form.has_errors %}
         <p>Your username and password didn't match. Please try again.</p>
@@ -39,9 +37,8 @@ Login
             <input type="hidden" name="next" value="{{ next }}" />
           </div>
         </form>
-      </div>
-    </div>
-  </div>
-</div>
+
 {% endif %}
+      </div>
+    </section>
 {% endblock %}

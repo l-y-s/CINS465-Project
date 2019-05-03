@@ -28,7 +28,7 @@
                 <a class="nav-link js-scroll-trigger" href="#about">About</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link js-scroll-trigger" href="./webclient">Play</a>
+                <a class="nav-link js-scroll-trigger" href="{% url 'webclient:index' %}">Play</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link js-scroll-trigger" href="#how2play">How to Play</a>
@@ -37,95 +37,18 @@
                 <a class="nav-link js-scroll-trigger" href="#stats">Stats</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="./authenticate/login.html">Login</a>
+                <a class="nav-link" href="{% url 'login' %}">Login</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="./profile.html">Username</a>
+                <a class="nav-link" href="{% url 'profile' %}">{{user.username}}</a>
               </li>
             </ul>
           </div>
         </div>
       </nav>
 
-      <!--Header-->
-      <header class="mainhead" id="page-top">
-        <div class="container text-center">
-          <h1>Welcome to the MUD that will more than likely never be titled.</h1>
-        </div>
-      </header>
-
-      <!--Section-->
-      <section class="about" id="about">
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-8 mx-auto">
-              <h2>What is this?</h2>
-              <p class="lead">This is a project for CINS465. We are seeking to create a MUD (Multi User Dungeon) that can be played completely in browser and utlizing modern web technologies.
-                </br>
-                Here are the quick facts about our project:</p>
-              <ul>
-                <li>Powered by <a href="http://www.evennia.com/">Evennia</a></li>
-                <li>Hosted 100% on AWS</li>
-                <li><strike>Utilizes AWS to scale with demand</strike> We still have 2 weeks ¯\_(ツ)_/¯</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="play" id ="how2play">
-        <div class="container"
-          <div class="row">
-            <div class="col-lg-8 mx-auto">
-              <h2>How to play</h2>
-              <p class="lead">For those already familiar with text-based games and/or MUDs, you can select the Play option from the navigation menu above to jump right into the game.
-                </br>
-              For beginners, here are a couple helpful tips:</p>
-              <ul>
-              	<li>Choose a memorable name, you won't be able to change it later!</li>
-              	<li>All actions you wish to perform will be typed into the prompt, generally of the form [verb] [noun] (e.g. get key). There is a little flexibility in the formation of commands, so don't worry too much about having very well formed commands.</li>
-              	<li>Basic descriptions of your surroundings will be presented when you enter a new area, and they can be repeated by using the "look" command. Objects and players in the world will also have descriptions and hints. Be sure to "look" at anything and everything in the game world, you may discover additional details you didn't know existed!</li>
-              	<li>Be sure to try out the tutorial module before jumping into the game proper. The intro room at the beginning of the game will help you get started.</li>
-              	<li>And finally, you can use the command "help" to get a short list of available commands at any point.</li>
-              </ul>
-              <p>Good luck, and have fun!</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="stats" id ="stats">
-       <div class="container">
-         <div class="row">
-           <div class="col-lg-8 mx-auto">
-             <h2>Stats</h2>
-             <p class="lead">Here are some stats about our game:</p>
-              </br>
-              </br>
-             <ol class="StatsLists">
-            </div>
-          </div>
-          <div class="row">
-               <div class="col-sm">
-               <h4>Database Stats</h4>
-                 <ul>
-                   <li >{{num_accounts_registered}} account{{num_accounts_registered|pluralize}} (+ {{num_characters}} character{{num_characters|pluralize}})</li>
-                   <li >{{num_rooms}} room{{num_rooms|pluralize}} (+ {{num_exits}} exits)</li>
-                   <li >{{num_others}} other objects</li>
-                 </ul>
-             </div>
-             <div class="col-sm">
-               <h4>User Stats</h4>
-                 <ul>
-                   {% for account in accounts_connected_recent %}
-                   <li>{{account.username}}&mdash;<em>{{account.last_login|timesince}} ago</em></li>
-                   {% endfor %}
-                 </ul>
-             </div>
-             </ol>
-         </div>
-       </div>
-     </section>
+      {% block content %}
+      {% endblock %}
 
      <footer class="py-5 bg-dark">
        <div class="container">

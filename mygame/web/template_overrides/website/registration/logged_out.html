@@ -1,0 +1,17 @@
+{% extends "website/base.html" %}
+
+{% block titleblock %}Logged Out{% endblock %}
+
+{% block content %}
+<section class="login">
+  <div class="container">
+    <h1 class="card-title">Logout</h1>
+    <p>You have been logged out.</p>
+    <p>Redirecting</p>
+  </div>
+</section>
+
+<script type="text/JavaScript">
+  setTimeout("location.href = '/';",2000);
+ </script>
+{% endblock %}

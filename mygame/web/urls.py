@@ -5,13 +5,15 @@ help.
 
 """
 from django.conf.urls import url, include
+from web import customviews
 
 # default evennia patterns
 from evennia.web.urls import urlpatterns
 
 # eventual custom patterns
 custom_patterns = [
-    # url(r'/desired/url/', view, name='example'),
+    url(r'profile', customviews.profilepage, name='profile'),
+    url(r'stats', customviews.statspage, name='stats')
 ]
 
 # this is required by Django.
