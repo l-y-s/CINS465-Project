@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.conf import settings
 from django.template import *
 
 def profilepage(request):
@@ -6,6 +7,15 @@ def profilepage(request):
 
 def statspage(request):
     return render(request, "stats.html")
+
+def pagetop(request):
+    return render(request, "index.html")
+
+def about(request):
+    return render(request, "index.html")
+
+def how2play(request):
+    return render(request, "index.html")
 
 # Function to determine if page is index. If page is index, then options #page-top, #about, #how2play, and #stats return with none url value.
  #def isPageIndex():

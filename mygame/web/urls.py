@@ -13,7 +13,10 @@ from evennia.web.urls import urlpatterns
 # eventual custom patterns
 custom_patterns = [
     url(r'profile', customviews.profilepage, name='profile'),
-    url(r'stats', customviews.statspage, name='stats')
+    url(r'stats', customviews.statspage, name='stats'),
+    url(r'^$', customviews.pagetop, name='page-top'),
+    url(r'^#about$', customviews.about, name='about'),
+    url(r'^$', customviews.how2play, name='how2play')
 ]
 
 # this is required by Django.
