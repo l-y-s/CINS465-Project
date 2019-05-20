@@ -7,7 +7,17 @@ services:
        - .:/code
     expose:
        - 8000
+    links:
+      -redis
+    environment:
+      -REDIS_URL=redis://cache
     command: python /code/manage.py runserver 0.0.0.0:8000
+
+  redis:
+    image: redis:2.8
+    container_name: cache
+    expose:
+      - 6379
 
   nginx:
     restart: always
