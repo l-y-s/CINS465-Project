@@ -1,0 +1,5 @@
+Django==2.1.7
+pytz==2018.9
+pylint
+pylint_django
+coverage
