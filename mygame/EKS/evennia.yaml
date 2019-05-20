@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cinsevennia
+spec:
+  selector:
+    matchLabels:
+      run: cinsevennia
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        run: cinsevennia
+    spec:
+      containers:
+        - name: cinsevennia
+          image: awlsring/cinsevennia
+          ports:
+            - containerPort: 4001
+              #name: port1
+              #containerPort: 4001
+              #name: ports2
+              #containerPort: 4005
+              #name: ports3
+              #containerPort: 5432
+              #name: dbConn

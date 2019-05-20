@@ -1,8 +1,5 @@
-/*!
- * Start Bootstrap - Scrolling Nav (https://startbootstrap.com/template-overviews/scrolling-nav)
- * Copyright 2013-2019 Start Bootstrap
- * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-scrolling-nav/blob/master/LICENSE)
- */
+/* Only a copy of our CSS. CSS that is pulled by website is hosted on our S3 bucket */
+
 header {
   padding: 156px 0 100px;
 }
@@ -10,8 +7,6 @@ header {
 section {
   padding: 150px 0;
 }
-
-/* Cancels underline and default color from bootstrap */
 
 a {
 	color: rgba(255, 255, 255, 0.5);
@@ -90,4 +85,38 @@ a:visited {
 
 .list-group-item {
   background-color:  #d0d7e1
+}
+
+.login {
+  background-color: #293240
+}
+
+.login h1{
+  color: white
+}
+.login p{
+  color: white
+}
+.login h3{
+  color: white
+}
+.login label{
+  color: white
+}
+
+.profile {
+  background-color: #293240
+}
+
+.profile h1{
+  color: white
+}
+.profile p{
+  color: white
+}
+.profile h2{
+  color: white
+}
+.profile label{
+  color: white
 }
