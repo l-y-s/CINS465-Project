@@ -1,0 +1,3 @@
+Async websocket chat server project. Implemented as a separate project due to Evennia's redirection/denial of all websocket connections other than the inital connection to the Portal backend.
+
+Included is a script which runs the Django project server as well as the Redis backend for Channels. Chat server runs locally with no issues, however when attempting to host on AWS we encountered problems as the AWS Linux image could not be upgraded to the latest SQLite3 version due to system dependencies with their particular flavor of Linux. We then attempted to hook into our existing Postgres DB for Evennia, but this resulted in unexpected behavior. All code is available and sourced appropriately otherwise.
