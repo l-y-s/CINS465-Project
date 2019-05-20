@@ -7,7 +7,7 @@ services:
        - .:/code
     expose:
        - 8000
-command: python /code/mysite/manage.py runserver 0.0.0.0:8000
+    command: python /code/mysite/manage.py runserver 0.0.0.0:8000
 
   nginx:
     restart: always
