@@ -1,0 +1,2 @@
+docker run -p 6379:6379 -p -d tippmann21/chatsite
+python3 manage.py runserver

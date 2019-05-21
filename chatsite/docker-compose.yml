@@ -1,0 +1,36 @@
+version: '3'
+
+services:
+  web:
+    build: .
+    volumes:
+       - .:/code
+    expose:
+       - 8000
+    links:
+      - redis
+    environment:
+      - REDIS_URL=redis://cache
+    command: /code/startup.sh
+     #command: python /code/manage.py runserver 0.0.0.0:8000
+     #command: /code/start-channelserver.sh
+     #command: /code/start-channelworker.sh
+
+  redis:
+    image: redis:2.8
+    container_name: cache
+    restart: always
+    expose:
+      - 6379
+    ports:
+      - 6379:6379
+
+  nginx:
+    restart: always
+    build: ./nginx/
+    depends_on:
+      - web
+    ports:
+      - "80:80"
+    links:
+      - web:web
