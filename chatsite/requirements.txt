@@ -1,5 +1,10 @@
-Django==2.1.7
+Django==2.2.1
 pytz==2018.9
 pylint
 pylint_django
 coverage
+Channels==2.2.0
+Channels_redis
+asgiref==3.0
+psycopg2
+psycopg2-binary

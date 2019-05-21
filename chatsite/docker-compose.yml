@@ -8,9 +8,9 @@ services:
     expose:
        - 8000
     links:
-      -redis
+      - redis
     environment:
-      -REDIS_URL=redis://cache
+      - REDIS_URL=redis://cache
     command: python /code/manage.py runserver 0.0.0.0:8000
 
   redis:
