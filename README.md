@@ -8,4 +8,4 @@ Custom web files can be found in ./mygame/web/template_overrides/website
 Kubernetes Files can be found in ./mygame/EKS
 
 cins465.matthewrawlings.com:4001 hosts our non K8 website
-k8.matthewrawlings.com:4001 hosts our K8 site
+k8.matthewrawlings.com hosts our K8 site
