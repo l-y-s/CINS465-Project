@@ -11,13 +11,19 @@ services:
       - redis
     environment:
       - REDIS_URL=redis://cache
-    command: python /code/manage.py runserver 0.0.0.0:8000
+    command: /code/startup.sh
+     #command: python /code/manage.py runserver 0.0.0.0:8000
+     #command: /code/start-channelserver.sh
+     #command: /code/start-channelworker.sh
 
   redis:
     image: redis:2.8
     container_name: cache
+    restart: always
     expose:
       - 6379
+    ports:
+      - 6379:6379
 
   nginx:
     restart: always

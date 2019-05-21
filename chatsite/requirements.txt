@@ -5,6 +5,7 @@ pylint_django
 coverage
 Channels==2.2.0
 Channels_redis
+daphne==2.3
 asgiref==3.0
 psycopg2
 psycopg2-binary
